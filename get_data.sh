@@ -6,6 +6,7 @@ while read line;
 do
 # for read each line
 
-fasterq-dump $line -outdir PRJNA548383/$line --progress
+prefetch $line --output-directory PRJNA548383/$line
+fasterq-dump $line --outdir PRJNA548383/$line --progress
 
 done < $filename
