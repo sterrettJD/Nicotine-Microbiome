@@ -11,3 +11,6 @@ export PATH=$PATH:$PWD/sratoolkit.current-mac64/bin
 
 #should print out a path
 which fastq-dump
+
+#start config 
+vdb-config -i
