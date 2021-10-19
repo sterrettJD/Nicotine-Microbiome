@@ -22,6 +22,10 @@ or [config guidelines](https://github.com/ncbi/sra-tools/wiki/03.-Quick-Toolkit-
     - `vdb-config --restore-defaults`
     - `vdb-config -s "/repository/user/main/public/root=."`
     - `vdb-config -s "cache-enabled=true"`
-    - vdb-config --report-cloud-identity yes
+    - `vdb-config --report-cloud-identity yes`
 
 2. `get_data.sh` is a script to loop through the SRA accession values for the projects and download the fastq files in directories named by their run IDs.
+  - If having issues with this, consider something similar to the following: 
+> while read line; do \
+wget http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=dload&run_list=${line}&format=fastq;\
+done<list_of_ids\
