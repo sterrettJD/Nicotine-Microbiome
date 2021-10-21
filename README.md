@@ -9,8 +9,15 @@ IQ Biology Rotation Project with Noah Fierer
 
 - Pull shotgun metagenomic data from [this paper](https://www.science.org/doi/10.1126/sciadv.aaz0108?utm_campaign=SciMag&utm_medium=Twitter&utm_source=JHubbard)
   - Project IDs: PRJNA548383, PRJNA544061, and PRJNA508385
-- Train Hidden Markov Model on nicotine-degrading genes
+- Create database of sequences for genes involved in nicotine degradation, based on [Mu et al., 2020](https://www.sciencedirect.com/science/article/pii/S001393512030150X)
+  - Start with a few key genes to get the pipeline running
+  - Pull from [UniProt](https://www.uniprot.org/) and/or [GenBank](https://www.ncbi.nlm.nih.gov/guide/howto/find-transcript-gene/)
+    - UniProt [API querying](https://www.uniprot.org/help/api_queries)
+  - Then add others once things are working
+  - Check for these genes in their hosts in [IMG](https://img.jgi.doe.gov/) as a sanity check
+- Use Diamond to find nicotine-degrading genes in the oral microbiolmes
 - Assess difference in nicotine-degrading genes in the oral microbiomes of smokes/vapers vs controls
+- Look at MAGs if time?
 
 ## Files/details
 
