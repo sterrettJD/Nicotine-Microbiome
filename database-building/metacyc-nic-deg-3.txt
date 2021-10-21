@@ -1,0 +1,13 @@
+nicotine degradation III (VPP pathway)
+
+Gene ID	Gene Accession	Gene name	Reaction id	Reaction EC	Enzymatic activity	Evidence	Organism
+G-44452	BW45_05695	ndhA	NICOTINE-DEHYDROGENASE-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Agrobacterium tumefaciens S33
+G-44453	BW45_05690	ndhB	NICOTINE-DEHYDROGENASE-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Agrobacterium tumefaciens S33
+G-43966		nctB	RXN-16526	No EC#	(S)-6-hydroxynicotine oxidase	EV-EXP	Shinella sp. HZN7
+G-44454	BW45_05840	Pno	RXN-16529	1.5.8.M1	6-hydroxypseudooxynicotine dehydrogenase	EV-EXP	Agrobacterium tumefaciens S33
+G-43965		orf2	RXN-16529	1.5.8.M1	6-hydroxypseudooxynicotine oxidase	EV-EXP	Shinella sp. HZN7
+G-43968		vppD	RXN-13081	1.14.13.163	6-hydroxy-3-succinoyl-pyridine hydroxylase	EV-EXP	Ochrobactrum rhizosphaerae SJY1
+G-43971		vppE	1.13.11.9-RXN	1.13.11.9	2,5-dihydroxypyridine dioxygenase	EV-EXP	Ochrobactrum rhizosphaerae SJY1
+G-43969		vppF	RXN-11318	3.5.1.106	N-formylmaleamate deformylase	EV-COMP	Ochrobactrum rhizosphaerae SJY1
+G-43967		vppG	RXN-646	3.5.1.107	maleamate amidohydrolase	EV-COMP	Ochrobactrum rhizosphaerae SJY1
+G-43970		vppH	MALEATE-ISOMERASE-RXN	5.2.1.1	maleate isomerase	EV-COMP	Ochrobactrum rhizosphaerae SJY1

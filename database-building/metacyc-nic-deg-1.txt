@@ -1,0 +1,21 @@
+nicotine degradation I (pyridine pathway)
+
+Gene ID	Gene Accession	Gene name	Reaction id	Reaction EC	Enzymatic activity	Evidence	Organism
+G-116		ndhA	NICOTINE-DEHYDROGENASE-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-117		ndhB	NICOTINE-DEHYDROGENASE-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-118		ndhC	NICOTINE-DEHYDROGENASE-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-116		ndhA	R161-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-117		ndhB	R161-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-118		ndhC	R161-RXN	1.5.99.4	nicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-120		6-HDNO	RXN-16528	No EC#	(R)-6-hydroxynicotine oxidase	EV-EXP	Paenarthrobacter nicotinovorans
+G-119		6-HLNO	RXN-16526	No EC#	(S)-6-hydroxynicotine oxidase	EV-EXP	Paenarthrobacter nicotinovorans
+G-121		kdhA	R162-RXN	1.5.99.14	6-hydroxypseudooxynicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-122		kdhB	R162-RXN	1.5.99.14	6-hydroxypseudooxynicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-123		kdhC	R162-RXN	1.5.99.14	6-hydroxypseudooxynicotine dehydrogenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-14935		DHPONH	R181-RXN	3.7.1.19	2,6-dihydroxypseudooxynicotine hydrolase	EV-EXP	Paenarthrobacter nicotinovorans
+G-14939		mabO	RXN-13067	1.5.3.19	4-methylaminobutyrate oxidase (demethylating)	EV-EXP	Paenarthrobacter nicotinovorans
+G-14941		mao	RXN-13065	1.5.3.21	4-methylaminobutanoate oxidase	EV-EXP	Paenarthrobacter nicotinovorans
+G-14940		sad	SUCCSEMIALDDEHYDROG-RXN	1.2.1.79	succinate-semialdehyde dehydrogenase (NADP+)	EV-EXP	Paenarthrobacter nicotinovorans
+G-14934		dhph	1.14.13.10-RXN	1.14.13.10	2,6-dihydroxypyridine 3-monooxygenase	EV-EXP	Paenarthrobacter nicotinovorans
+G-14943		ORF77	RXN-13072	3.5.1.3/3.5.1.111	2-ketoglutaramate amidase	EV-EXP	Paenarthrobacter nicotinovorans
+G-14942		nboR	RXN-13069	1.1.1.328	NAD(P)H-nicotine blue oxidoreductase	EV-EXP	Paenarthrobacter nicotinovorans

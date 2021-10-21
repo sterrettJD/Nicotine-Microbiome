@@ -1,0 +1,18 @@
+nicotine degradation II (pyrrolidine pathway)
+
+Gene ID	Gene Accession	Gene name	Reaction id	Reaction EC	Enzymatic activity	Evidence	Organism
+G-43961	PPS_4081	nicA2	RXN-13076	1.3.99.-	nicotine dehydrogenase	EV-EXP	Pseudomonas putida S16
+G-14948	PPS_0381	nicA1	RXN-13076	1.3.99.-	nicotine dehydrogenase	EV-EXP	Pseudomonas putida S16
+G-14948	PPS_0381	nicA1	RXN-13088	1.4.3.24	pseudooxynicotine oxidase	EV-EXP	Pseudomonas putida S16
+G-14952		pao	RXN-13088	1.4.3.24	pesudooxynicotine oxidase	EV-EXP	Pseudomonas sp. HZN6
+G-14948	PPS_0381	nicA1	RXN-13089	1.2.1.83	3-succinoylsemialdehyde-pyridine dehydrogenase	EV-EXP	Pseudomonas putida S16
+G-14953		sap	RXN-13089	1.2.1.83	3-succinoylsemialdehyde-pyridine dehydrogenase	EV-EXP	Pseudomonas sp. HZN6
+G-43964	PPS_4077	spmC	RXN-13082	1.5.99.-	3-succinoylpyridine monooxygenase	EV-EXP	Pseudomonas putida S16
+G-43963		spmB	RXN-13082	1.5.99.-	3-succinoylpyridine monooxygenase	EV-EXP	Pseudomonas putida S16
+G-43962	PPS_4078	spmA	RXN-13082	1.5.99.-	3-succinoylpyridine monooxygenase	EV-EXP	Pseudomonas putida S16
+G-14951	PPS_4061	hspB	RXN-13081	1.14.13.163	6-hydroxy-3-succinoyl-pyridine hydroxylase	EV-EXP	Pseudomonas putida S16
+G-14949	PPS_0380	hspA	RXN-13081	1.14.13.163	6-hydroxy-3-succinoylpyridine hydroxylase	EV-EXP	Pseudomonas putida S16
+G-43959	PPS_4058	nicX	1.13.11.9-RXN	1.13.11.9	2,5-dihydroxypyridine dioxygenase	EV-EXP	Pseudomonas putida S16
+G-43958	PPS_4059	nicD	RXN-11318	3.5.1.106	N-formylmaleamate deformylase	EV-EXP	Pseudomonas putida S16
+G-43960	PPS_4057	nicF	RXN-646	3.5.1.107	maleamate amidohydrolase	EV-EXP	Pseudomonas putida S16
+G-43957	PPS_4060	maiA	MALEATE-ISOMERASE-RXN	5.2.1.1	maleate isomerase	EV-EXP	Pseudomonas putida S16
