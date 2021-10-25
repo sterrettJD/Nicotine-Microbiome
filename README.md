@@ -10,6 +10,11 @@ IQ Biology Rotation Project with Noah Fierer
 - Pull shotgun metagenomic data from [this paper](https://www.science.org/doi/10.1126/sciadv.aaz0108?utm_campaign=SciMag&utm_medium=Twitter&utm_source=JHubbard)
   - Project IDs: PRJNA548383, PRJNA544061, and PRJNA508385
 - Create database of sequences for genes involved in nicotine degradation, based on [Mu et al., 2020](https://www.sciencedirect.com/science/article/pii/S001393512030150X)
+  - MetaCyc degradation pathways tsvs added
+  - Pull fastas from GenBank
+    - `conda install -y -c conda-forge -c bioconda -c defaults entrez-direct`
+    - `esearch -db protein -query 'Protein name' | efetch -format fasta`
+    - But some of the genes only have names, not accession IDs, so they return sequences for unwanted genes...
   - Start with a few key genes to get the pipeline running
   - Pull from [UniProt](https://www.uniprot.org/) and/or [GenBank](https://www.ncbi.nlm.nih.gov/guide/howto/find-transcript-gene/)
     - UniProt [API querying](https://www.uniprot.org/help/api_queries)
