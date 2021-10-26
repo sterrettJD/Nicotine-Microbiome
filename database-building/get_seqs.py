@@ -34,8 +34,13 @@ def check_for_accession_from_other_files(no_accession, accession_names):
         if name in accession_names:
             print(f"No accession ID for {name} in {f}, but it does exist in another file")
             no_accession.pop(i)
-    return no_accession        
+    return no_accession 
 
+def get_gene_fasta(id, output_file):
+    command = f"esearch -db protein -query '{id}' | efetch -format fasta >> {output_file}"
+
+    subprocess.run(command,
+        check=True, text=True, shell=True)
 
 if __name__=="__main__":
     
@@ -45,6 +50,9 @@ if __name__=="__main__":
     print(f"\nAccession IDs exist for:")
     for i, name in enumerate(accession_names):
         print(name)
+        
+    for id in accession_ids:
+        get_gene_fasta(id,"sequences.fasta")
 
     print(f"\nNO accession IDs exist for:")
     for i, (name,f) in enumerate(no_accession):
