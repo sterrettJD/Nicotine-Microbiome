@@ -1,0 +1,47 @@
+No accession ID for ndhA in metacyc-nic-deg-1.txt, but it does exist in another file
+No accession ID for ndhA in metacyc-nic-deg-1.txt, but it does exist in another file
+
+Accession IDs exist for:
+nicA2
+nicA1
+nicA1
+nicA1
+spmC
+spmA
+hspB
+hspA
+nicX
+nicD
+nicF
+maiA
+ndhA
+ndhB
+Pno
+
+NO accession IDs exist for:
+ndhB
+ndhC
+ndhB
+ndhC
+6-HDNO
+6-HLNO
+kdhA
+kdhB
+kdhC
+DHPONH
+mabO
+mao
+sad
+dhph
+ORF77
+nboR
+pao
+sap
+spmB
+nctB
+orf2
+vppD
+vppE
+vppF
+vppG
+vppH
