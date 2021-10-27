@@ -2,7 +2,7 @@ import subprocess
 import pandas as pd
 import numpy as np
 
-files = ["metacyc-nic-deg-1.txt", "metacyc-nic-deg-2.txt", "metacyc-nic-deg-3.txt"]
+files = ["../metacyc-nic-deg-1.txt", "../metacyc-nic-deg-2.txt", "../metacyc-nic-deg-3.txt"]
 
 def get_accessions(files):
     no_accession = []
@@ -46,8 +46,8 @@ def get_gene_fasta(id, output_file):
     subprocess.run(command,
         check=True, text=True, shell=True)
 
-if __name__=="__main__":
-    
+
+def main():
     no_accession, accession_names, accession_ids = get_accessions(files)
     no_accession = check_for_accession_from_other_files(no_accession, accession_names)
 
@@ -60,4 +60,9 @@ if __name__=="__main__":
 
     print(f"\nNO accession IDs exist for:")
     for i, (name,f) in enumerate(no_accession):
-        print(name)
+        print(name)    
+
+
+if __name__=="__main__":
+    main()
+
