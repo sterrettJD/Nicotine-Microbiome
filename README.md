@@ -29,7 +29,10 @@ IQ Biology Rotation Project with Noah Fierer
 - Get MetaCyc gene details
 - Search E.C. IDs in UniProt
 - Download fastas for all matching sequences
-
+  - For `3.5.1.3`, filtered only bacteria because lots of human and mouse sequences were coming up
+  - Skipped `1.3.99.-` and `1.5.99.-` because too many unrelated genes were coming up
+  - E.C. for nctB was sourced from Uniprot info on (S)-6-hydroxynicotine oxidase
+  - Skipped `1.5.8.M1` because it wasn't pulling up any results, and searching the name pulled up kdhA/B/C, which I already had
 
 ## Files/details
 
