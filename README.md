@@ -24,6 +24,13 @@ IQ Biology Rotation Project with Noah Fierer
 - Assess difference in nicotine-degrading genes in the oral microbiomes of smokes/vapers vs controls
 - Look at MAGs if time?
 
+## Database
+
+- Get MetaCyc gene details
+- Search E.C. IDs in UniProt
+- Download fastas for all matching sequences
+
+
 ## Files/details
 
 1. `setup_scripts` contains scripts with code to install sra toolkit. I haven't tried these in script format (since I only needed to install it once), 
