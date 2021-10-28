@@ -34,6 +34,9 @@ IQ Biology Rotation Project with Noah Fierer
   - E.C. for nctB was sourced from Uniprot info on (S)-6-hydroxynicotine oxidase
   - Skipped `1.5.8.M1` because it wasn't pulling up any results, and searching the name pulled up kdhA/B/C, which I already had
 
+## Diamond
+- Please cite http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
 ## Files/details
 
 1. `setup_scripts` contains scripts with code to install sra toolkit. I haven't tried these in script format (since I only needed to install it once), 
