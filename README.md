@@ -36,6 +36,8 @@ IQ Biology Rotation Project with Noah Fierer
 
 ## Diamond
 - Please cite http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+- tested diamond with `diamond blastx -q PRJNA548383/SRR9641933/SRR9641933_1.fastq -d database-building/uniprot-nicotine-db.dmnd -o test.tsv `
+  - Got a couple hundred hits
 
 ## Files/details
 
