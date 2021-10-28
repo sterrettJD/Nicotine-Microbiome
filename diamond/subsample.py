@@ -18,6 +18,11 @@ def get_paths(directory):
     return directories
 
 
+def run_seqtk(input_file, output_file, depth):
+    command = "seqtk sample {input_file} {depth} >> {output_file}"
+    
+    subprocess.run(command,
+        check=True, text=True, shell=True)
 
 def main():
     directory = get_args()
