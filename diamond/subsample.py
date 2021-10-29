@@ -14,8 +14,13 @@ def get_args():
 
 def get_paths(directory):
     contents = os.listdir(directory)
-    directories = [os.path.join(directory, content) for content in contents]
-    return directories
+    all_fastqs = [(os.path.join(directory, content, f"{content}_1.fastq"),
+                    os.path.join(directory, content, f"{content}_2.fastq")) for content in contents]
+    return all_fastqs
+
+"""
+def merge_reads(filepaths):
+"""
 
 
 def run_seqtk(input_file, output_file, depth):
@@ -24,10 +29,11 @@ def run_seqtk(input_file, output_file, depth):
     subprocess.run(command,
         check=True, text=True, shell=True)
 
+
 def main():
     directory = get_args()
-    filepaths = get_paths(directory)
-    print(filepaths)
+    all_fastqs = get_paths(directory)
+    print(all_fastqs)
 
 if __name__=="__main__":
     main()
