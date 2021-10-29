@@ -35,7 +35,7 @@ def merge_reads(filepaths):
 
 
 def run_seqtk(input_file, output_file, depth):
-    command = "seqtk sample {input_file} {depth} >> {output_file}"
+    command = f"seqtk sample {input_file} {depth} >> {output_file}"
     
     subprocess.run(command,
         check=True, text=True, shell=True)
@@ -44,7 +44,15 @@ def run_seqtk(input_file, output_file, depth):
 def main():
     directory = get_args()
     all_fastqs = get_paths(directory)
-    print(all_fastqs)
+
+    merge_reads(all_fastqs)
+
+    for fastq in all_fastqs:
+        merged_filepath = f"{fastq[0].split('_')[0]}.assembled.fastq"
+        merged_subsample_filepath = f"{fastq[0].split('_')[0]}.assembled.subsample.fastq"
+        
+        run_seqtk(merged_filepath, merged_subsample_filepath, depth=10000)
+
 
 if __name__=="__main__":
     main()
