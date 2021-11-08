@@ -1,0 +1,35 @@
+directories = ["testdiamond"]
+sampleids = ["SRR9641933"]
+lanes = [1,2]
+"""
+def get_forward_paths(directory):
+    contents = os.listdir(directory)
+    # SRA gives in format of Project/Sample/Sample_1.fastq and Project/Sample/Sample_2.fastq
+    # for forward and reverse reads, respectively
+    forward_paths = [os.path.join(directory, content, content+"_1.fastq") for content in contents]
+    return forward_paths
+
+
+def get_reverse_paths(directory):
+
+    contents = os.listdir(directory)
+    
+    reverse_paths = [os.path.join(directory, content, content+"_2.fastq")) for content in contents]
+    return reverse_paths
+"""
+rule all:
+    input:
+        expand("../{directory}/{sample}/{sample}_{lane}.fastq", 
+        directory=directories,
+        sample=sampleids, 
+        lane=lanes)
+
+rule merge_reads:
+    input:
+        "../{directory}/{sample}/{sample}_1.fastq",
+        "../{directory}/{sample}/{sample}_1.fastq",
+    output:
+        "Whatthisdid.txt"
+    shell:
+        "echo merging for {sample}"
+        """
