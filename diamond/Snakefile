@@ -16,20 +16,24 @@ def get_reverse_paths(directory):
     
     reverse_paths = [os.path.join(directory, content, content+"_2.fastq")) for content in contents]
     return reverse_paths
-"""
+
 rule all:
+    input: "whatthisdid.txt"
+
     input:
-        expand("../{directory}/{sample}/{sample}_{lane}.fastq", 
+        expand("../{directory}/{sample}/whatthisdid.txt", 
         directory=directories,
         sample=sampleids, 
         lane=lanes)
-
+"""
 rule merge_reads:
     input:
-        "../{directory}/{sample}/{sample}_1.fastq",
-        "../{directory}/{sample}/{sample}_1.fastq",
+        "../testdiamond/SRR9641933/SRR9641933_1.fastq",
+        "../testdiamond/SRR9641933/SRR9641933_2.fastq",
     output:
-        "Whatthisdid.txt"
+        "../testdiamond/SRR9641933/SRR9641933.assembled.fastq",
+        "../testdiamond/SRR9641933/SRR9641933.discarded.fastq",
+        "../testdiamond/SRR9641933/SRR9641933.unassembled.forward.fastq",
+        "../testdiamond/SRR9641933/SRR9641933.unassembled.reverse.fastq"
     shell:
-        "echo merging for {sample}"
-        """
+        " ~/tools/pear/src/pear -f ../testdiamond/SRR9641933/SRR9641933_1.fastq -r ../testdiamond/SRR9641933/SRR9641933_2.fastq -o ../testdiamond/SRR9641933/SRR9641933"
