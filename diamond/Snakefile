@@ -16,10 +16,16 @@ def get_reverse_paths(directory):
     
     reverse_paths = [os.path.join(directory, content, content+"_2.fastq")) for content in contents]
     return reverse_paths
-
+"""
 rule all:
-    input: "whatthisdid.txt"
+    input: 
+        "../testdiamond/SRR9641933/SRR9641933.assembled.fastq",
+        "../testdiamond/SRR9641933/SRR9641933.discarded.fastq",
+        "../testdiamond/SRR9641933/SRR9641933.unassembled.forward.fastq",
+        "../testdiamond/SRR9641933/SRR9641933.unassembled.reverse.fastq",
+        "../testdiamond/SRR9641933/diamond_results_SRR941933.txt"
 
+"""
     input:
         expand("../{directory}/{sample}/whatthisdid.txt", 
         directory=directories,
@@ -37,3 +43,11 @@ rule merge_reads:
         "../testdiamond/SRR9641933/SRR9641933.unassembled.reverse.fastq"
     shell:
         " ~/tools/pear/src/pear -f ../testdiamond/SRR9641933/SRR9641933_1.fastq -r ../testdiamond/SRR9641933/SRR9641933_2.fastq -o ../testdiamond/SRR9641933/SRR9641933"
+
+rule run_diamond:
+    input:
+        "../testdiamond/SRR9641933/SRR9641933.assembled.fastq"
+    output:
+        "../testdiamond/SRR9641933/diamond_results_SRR941933.txt"
+    shell:
+        "diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd -q ../testdiamond/SRR9641933/SRR9641933.assembled.fastq > ../testdiamond/SRR9641933/diamond_results_SRR941933.txt" 
