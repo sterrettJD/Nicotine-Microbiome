@@ -10,13 +10,7 @@ rule all:
         expand("../testdiamond/{sampleid}/{sampleid}.unassembled.reverse.fastq", sampleid=sampleids),
         expand("../testdiamond/{sampleid}/diamond_results_{sampleid}.txt", sampleid=sampleids)
 
-"""
-    input:
-        expand("../{directory}/{sample}/whatthisdid.txt", 
-        directory=directories,
-        sample=sampleids, 
-        lane=lanes)
-"""
+
 rule merge_reads:
     input:
         "../testdiamond/{sampleid}/{sampleid}_1.fastq",
