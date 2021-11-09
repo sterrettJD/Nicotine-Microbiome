@@ -43,7 +43,7 @@ rule all_NOTYET:
         #diamond creates a results file
         expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
         sampleid=acc_ids)
-"""
+
 
 rule get_data:
     output:
@@ -61,7 +61,7 @@ rule get_data:
 
         for c in commands:
             shell(c)
-
+"""
 
 rule merge_reads:
     input:
