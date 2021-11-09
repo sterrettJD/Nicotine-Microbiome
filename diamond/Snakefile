@@ -2,14 +2,37 @@ directories = ["testdiamond"]
 sampleids = ["SRR9641933"]
 lanes = [1,2]
 
+project_ids = ["PRJNA548383"]
+acc_ids = []
+
+for project in project_ids:
+    with open("../"+project+"_Acc_List.txt", "r") as f:
+        acc_ids += [line.strip() for line in f.readlines()]
+
 rule all:
     input: 
         expand("../testdiamond/{sampleid}/{sampleid}.assembled.fastq", sampleid=sampleids),
         expand("../testdiamond/{sampleid}/{sampleid}.discarded.fastq", sampleid=sampleids),
         expand("../testdiamond/{sampleid}/{sampleid}.unassembled.forward.fastq", sampleid=sampleids),
         expand("../testdiamond/{sampleid}/{sampleid}.unassembled.reverse.fastq", sampleid=sampleids),
+
         expand("../testdiamond/{sampleid}/diamond_results_{sampleid}.txt", sampleid=sampleids)
 
+"""
+rule all_NOTYET:
+    input:
+        expand("../data/{sampleid}/{sampleid}.assembled.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}.discarded.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}.unassembled.forward.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}.unassembled.reverse.fastq",
+        sampleid=acc_ids),
+
+        expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
+        sampleid=acc_ids)
+"""
 
 rule merge_reads:
     input:
