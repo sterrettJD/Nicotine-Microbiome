@@ -19,11 +19,11 @@ def get_reverse_paths(directory):
 """
 rule all:
     input: 
-        "../testdiamond/SRR9641933/SRR9641933.assembled.fastq",
-        "../testdiamond/SRR9641933/SRR9641933.discarded.fastq",
-        "../testdiamond/SRR9641933/SRR9641933.unassembled.forward.fastq",
-        "../testdiamond/SRR9641933/SRR9641933.unassembled.reverse.fastq",
-        "../testdiamond/SRR9641933/diamond_results_SRR941933.txt"
+        expand("../testdiamond/{sampleid}/{sampleid}.assembled.fastq", sampleid=sampleids),
+        expand("../testdiamond/{sampleid}/{sampleid}.discarded.fastq", sampleid=sampleids),
+        expand("../testdiamond/{sampleid}/{sampleid}.unassembled.forward.fastq", sampleid=sampleids),
+        expand("../testdiamond/{sampleid}/{sampleid}.unassembled.reverse.fastq", sampleid=sampleids),
+        expand("../testdiamond/{sampleid}/diamond_results_{sampleid}.txt", sampleid=sampleids)
 
 """
     input:
@@ -34,20 +34,20 @@ rule all:
 """
 rule merge_reads:
     input:
-        "../testdiamond/SRR9641933/SRR9641933_1.fastq",
-        "../testdiamond/SRR9641933/SRR9641933_2.fastq",
+        "../testdiamond/{sampleid}/{sampleid}_1.fastq",
+        "../testdiamond/{sampleid}/{sampleid}_2.fastq",
     output:
-        "../testdiamond/SRR9641933/SRR9641933.assembled.fastq",
-        "../testdiamond/SRR9641933/SRR9641933.discarded.fastq",
-        "../testdiamond/SRR9641933/SRR9641933.unassembled.forward.fastq",
-        "../testdiamond/SRR9641933/SRR9641933.unassembled.reverse.fastq"
+        "../testdiamond/{sampleid}/{sampleid}.assembled.fastq",
+        "../testdiamond/{sampleid}/{sampleid}.discarded.fastq",
+        "../testdiamond/{sampleid}/{sampleid}.unassembled.forward.fastq",
+        "../testdiamond/{sampleid}/{sampleid}.unassembled.reverse.fastq"
     shell:
-        " ~/tools/pear/src/pear -f ../testdiamond/SRR9641933/SRR9641933_1.fastq -r ../testdiamond/SRR9641933/SRR9641933_2.fastq -o ../testdiamond/SRR9641933/SRR9641933"
+        " ~/tools/pear/src/pear -f ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}_1.fastq -r ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}_2.fastq -o ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}"
 
 rule run_diamond:
     input:
-        "../testdiamond/SRR9641933/SRR9641933.assembled.fastq"
+        "../testdiamond/{sampleid}/{sampleid}.assembled.fastq"
     output:
-        "../testdiamond/SRR9641933/diamond_results_SRR941933.txt"
+        "../testdiamond/{sampleid}/diamond_results_{sampleid}.txt"
     shell:
-        "diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd -q ../testdiamond/SRR9641933/SRR9641933.assembled.fastq > ../testdiamond/SRR9641933/diamond_results_SRR941933.txt" 
+        "diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd -q ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq > ../testdiamond/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt" 
