@@ -21,6 +21,11 @@ def read_diamond_df(filepath):
     diamond_df.columns = diamond_columns
     return diamond_df
 
+def gene_acc_from_diamond_df(diamond_df):
+    target_acc = diamond_df["Target accession"]
+    target_acc = target_acc.apply(lambda x: x.split("|")[1])
+    return target_acc.tolist()
+
 def get_gene_name(query_list):
     url = 'https://www.uniprot.org/uploadlists/'
 
@@ -50,8 +55,10 @@ def add_to_diamond(responses):
 def main():
     responses = get_gene_name(["A0A009SNI0", "A0A084FU31"])
     diamond = read_diamond_df("organisms/Paenarthrobacter_diamond_results.txt")
+    query_list = gene_acc_from_diamond_df(diamond)
 
     #df = add_to_diamond(responses, filepath="organisms/Paenarthrobacter_diamond_results.txt")
     print(diamond)
+    print(query_list)
 if __name__=="__main__":
     main()
