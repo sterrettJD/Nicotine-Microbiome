@@ -44,21 +44,25 @@ def get_gene_name(query_list):
     return response.decode('utf-8')
 
 
-def add_to_diamond(responses):
+def add_to_diamond(responses, diamond_df):
     # using [1:] here drops the "from \t to" in the reponse 
     responses_list = responses.split("\n")[1:]
-    response_df = pd.DataFrame([x.split("\t") for x in responses_list], 
-                                columns=["query", "name"])
+    responses_df = pd.DataFrame([x.split("\t") for x in responses_list], 
+                                columns=["Acc id", "name"])
 
-    return response_df
+    print("responses length" + str(responses_df.shape))
+    diamond_df.loc[:,"Gene name"] = responses_df["name"]
+
+    return diamond_df
 
 def main():
-    responses = get_gene_name(["A0A009SNI0", "A0A084FU31"])
-    diamond = read_diamond_df("organisms/Paenarthrobacter_diamond_results.txt")
-    query_list = gene_acc_from_diamond_df(diamond)
-
-    #df = add_to_diamond(responses, filepath="organisms/Paenarthrobacter_diamond_results.txt")
-    print(diamond)
-    print(query_list)
+    diamond_df = read_diamond_df("organisms/Paenarthrobacter_diamond_results.txt")
+    query_list = gene_acc_from_diamond_df(diamond_df)
+    print("query length" + str(len(query_list)))
+    responses = get_gene_name(query_list)
+    
+    df = add_to_diamond(responses, diamond_df)
+    
+    print(df)
 if __name__=="__main__":
     main()
