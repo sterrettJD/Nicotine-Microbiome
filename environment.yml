@@ -1,0 +1,5 @@
+name: nico-micro-snakemake
+channels:
+  - defaults
+  - conda-forge
+prefix: /Users/johnsterrett/mambaforge/envs/nico-micro-snakemake
