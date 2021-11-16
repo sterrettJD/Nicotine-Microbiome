@@ -9,7 +9,8 @@ for project in project_ids:
     with open("../"+project+"_Acc_List.txt", "r") as f:
         acc_ids += [line.strip() for line in f.readlines()]
 
-rule all:
+"""
+rule all: #for testing
     input: 
         expand("../testdiamond/{sampleid}/{sampleid}.assembled.fastq", sampleid=sampleids),
         expand("../testdiamond/{sampleid}/{sampleid}.discarded.fastq", sampleid=sampleids),
@@ -19,7 +20,7 @@ rule all:
         expand("../testdiamond/{sampleid}/diamond_results_{sampleid}.txt", sampleid=sampleids)
 
 """
-rule all_NOTYET:
+rule all: #for fiji
     input:
         # get_data grabs the forward and reverse reads
         expand("../data/{sampleid}/{sampleid}_1.fastq",
@@ -61,7 +62,7 @@ rule get_data:
 
         for c in commands:
             shell(c)
-"""
+
 
 rule merge_reads:
     threads: 20
