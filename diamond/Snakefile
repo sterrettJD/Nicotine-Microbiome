@@ -2,11 +2,11 @@ directories = ["testdiamond"]
 sampleids = ["SRR9641933"]
 lanes = [1,2]
 
-project_ids = ["PRJNA548383"]
+project_ids = ["PRJNA548383", "PRJNA544061", "PRJNA508385"]
 acc_ids = []
 
 for project in project_ids:
-    with open("../"+project+"_Acc_List.txt", "r") as f:
+    with open("../Accession_lists/"+project+"_Acc_List.txt", "r") as f:
         acc_ids += [line.strip() for line in f.readlines()]
 
 """
