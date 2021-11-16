@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -p short # Partition or queue. In this case, short!
-#SBATCH --job-name=download_data # Job name
+#SBATCH --job-name=download_nicotine_data # Job name
 #SBATCH --mail-type=ALL # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=jost9358@colorado.edu
 #SBATCH --nodes=1 # Only use a single node
@@ -13,13 +13,16 @@
 
 for filename in PRJNA508385_Acc_List.txt  PRJNA544061_Acc_List.txt  PRJNA548383_Acc_List.txt ; do
 
-    while read line;
-    do
+    while read line; do
     # for read each line
-
-    prefetch $line --output-directory PRJNA548383/$line
-    fasterq-dump $line --outdir PRJNA548383/$line --progress
-
+        if [ -e ~/Nicotine-Micobiome/PRJNA548383/$line ]; then
+            echo "File exists"
+    
+        else
+            prefetch $line --output-directory PRJNA548383/$line
+            fasterq-dump $line --outdir PRJNA548383/$line --progress
+        fi
+    
     done < Accession_lists/$filename
 
 done
