@@ -6,9 +6,9 @@
 #SBATCH --nodes=1 # Only use a single node
 #SBATCH --ntasks=1 # Run on a single CPU
 #SBATCH --mem=100gb # Memory limit
-#SBATCH --time=04:00:00 # Time limit hrs:min:sec
-#SBATCH --output=/Users/jost9358/Nicotine-Microbiome_%j.out # Standard output and error log
-#SBATCH --error=/Users/jost9358/Nicotine-Microbiome_%j.err # %j inserts job number
+#SBATCH --time=08:00:00 # Time limit hrs:min:sec
+#SBATCH --output=/Users/jost9358/Nicotine-Microbiome/get_data_fiji_output/_%j.out # Standard output and error log
+#SBATCH --error=/Users/jost9358/Nicotine-Microbiome/get_data_fiji_output/_%j.err # %j inserts job number
 
 
 for filename in PRJNA508385_Acc_List.txt  PRJNA544061_Acc_List.txt  PRJNA548383_Acc_List.txt ; do
