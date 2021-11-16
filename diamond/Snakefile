@@ -66,30 +66,30 @@ rule get_data:
 rule merge_reads:
     threads: 20
     input:
-        "../testdiamond/{sampleid}/{sampleid}_1.fastq",
-        "../testdiamond/{sampleid}/{sampleid}_2.fastq",
+        "../data/{sampleid}/{sampleid}_1.fastq",
+        "../data/{sampleid}/{sampleid}_2.fastq",
     output:
-        "../testdiamond/{sampleid}/{sampleid}.assembled.fastq",
-        "../testdiamond/{sampleid}/{sampleid}.discarded.fastq",
-        "../testdiamond/{sampleid}/{sampleid}.unassembled.forward.fastq",
-        "../testdiamond/{sampleid}/{sampleid}.unassembled.reverse.fastq"
+        "../data/{sampleid}/{sampleid}.assembled.fastq",
+        "../data/{sampleid}/{sampleid}.discarded.fastq",
+        "../data/{sampleid}/{sampleid}.unassembled.forward.fastq",
+        "../data/{sampleid}/{sampleid}.unassembled.reverse.fastq"
     shell:
         """ 
-        pear -f ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}_1.fastq \
-        -r ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}_2.fastq \
-        -o ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid} \
+        pear -f ../data/{wildcards.sampleid}/{wildcards.sampleid}_1.fastq \
+        -r ../data/{wildcards.sampleid}/{wildcards.sampleid}_2.fastq \
+        -o ../data/{wildcards.sampleid}/{wildcards.sampleid} \
         --threads 20
         """
 
 rule run_diamond:
     threads: 20
     input:
-        "../testdiamond/{sampleid}/{sampleid}.assembled.fastq"
+        "../data/{sampleid}/{sampleid}.assembled.fastq"
     output:
-        "../testdiamond/{sampleid}/diamond_results_{sampleid}.txt"
+        "../data/{sampleid}/diamond_results_{sampleid}.txt"
     shell:
         """
         diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd \
-        -q ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
-        --threads 20 > ../testdiamond/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt
+        -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
+        --threads 20 > ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt
         """ 
