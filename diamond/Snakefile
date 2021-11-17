@@ -2,14 +2,15 @@ directories = ["testdiamond"]
 sampleids = ["SRR9641933"]
 lanes = [1,2]
 
-project_ids = ["PRJNA548383"]
+project_ids = ["PRJNA548383", "PRJNA544061", "PRJNA508385"]
 acc_ids = []
 
 for project in project_ids:
-    with open("../"+project+"_Acc_List.txt", "r") as f:
+    with open("../Accession_lists/"+project+"_Acc_List.txt", "r") as f:
         acc_ids += [line.strip() for line in f.readlines()]
 
-rule all:
+"""
+rule all: #for testing
     input: 
         expand("../testdiamond/{sampleid}/{sampleid}.assembled.fastq", sampleid=sampleids),
         expand("../testdiamond/{sampleid}/{sampleid}.discarded.fastq", sampleid=sampleids),
@@ -19,7 +20,7 @@ rule all:
         expand("../testdiamond/{sampleid}/diamond_results_{sampleid}.txt", sampleid=sampleids)
 
 """
-rule all_NOTYET:
+rule all: #for fiji
     input:
         # get_data grabs the forward and reverse reads
         expand("../data/{sampleid}/{sampleid}_1.fastq",
@@ -61,24 +62,43 @@ rule get_data:
 
         for c in commands:
             shell(c)
-"""
+
 
 rule merge_reads:
+    threads: 20
     input:
-        "../testdiamond/{sampleid}/{sampleid}_1.fastq",
-        "../testdiamond/{sampleid}/{sampleid}_2.fastq",
+        expand("../data/{sampleid}/{sampleid}_1.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}_2.fastq",
+        sampleid=acc_ids)
     output:
-        "../testdiamond/{sampleid}/{sampleid}.assembled.fastq",
-        "../testdiamond/{sampleid}/{sampleid}.discarded.fastq",
-        "../testdiamond/{sampleid}/{sampleid}.unassembled.forward.fastq",
-        "../testdiamond/{sampleid}/{sampleid}.unassembled.reverse.fastq"
+        expand("../data/{sampleid}/{sampleid}.assembled.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}.discarded.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}.unassembled.forward.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}.unassembled.reverse.fastq", 
+        sampleid=acc_ids)
     shell:
-        " ~/tools/pear/src/pear -f ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}_1.fastq -r ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}_2.fastq -o ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}"
+        """ 
+        pear -f ../data/{wildcards.sampleid}/{wildcards.sampleid}_1.fastq \
+        -r ../data/{wildcards.sampleid}/{wildcards.sampleid}_2.fastq \
+        -o ../data/{wildcards.sampleid}/{wildcards.sampleid} \
+        --threads 20
+        """
 
 rule run_diamond:
+    threads: 20
     input:
-        "../testdiamond/{sampleid}/{sampleid}.assembled.fastq"
+        expand("../data/{sampleid}/{sampleid}.assembled.fastq",
+        sampleid=acc_ids)
     output:
-        "../testdiamond/{sampleid}/diamond_results_{sampleid}.txt"
+        expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
+        sampleid=acc_ids)
     shell:
-        "diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd -q ../testdiamond/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq > ../testdiamond/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt" 
+        """
+        diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd \
+        -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
+        --threads 20 > ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt
+        """ 
