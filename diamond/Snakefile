@@ -22,6 +22,15 @@ rule all: #for testing
 """
 rule all: #for fiji
     input:
+            # get_data grabs the forward and reverse reads
+        expand("../data/{sampleid}/{sampleid}_1.fastq",
+        sampleid=acc_ids),
+        expand("../data/{sampleid}/{sampleid}_2.fastq",
+        sampleid=acc_ids),
+        # get_data grabs the .sra file as well
+        expand("../data/{sampleid}/{sampleid}/{sampleid}.sra",
+        sampleid=acc_ids),
+
         # merge_reads creates these
         expand("../data/{sampleid}/{sampleid}.assembled.fastq",
         sampleid=acc_ids),
@@ -36,16 +45,7 @@ rule all: #for fiji
         expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
         sampleid=acc_ids)
 
-"""
 
-        # get_data grabs the forward and reverse reads
-        expand("../data/{sampleid}/{sampleid}_1.fastq",
-        sampleid=acc_ids),
-        expand("../data/{sampleid}/{sampleid}_2.fastq",
-        sampleid=acc_ids),
-        # get_data grabs the .sra file as well
-        expand("../data/{sampleid}/{sampleid}/{sampleid}.sra",
-        sampleid=acc_ids),
 
 rule get_data:
     output:
@@ -54,13 +54,12 @@ rule get_data:
         "../data/{sampleid}/{sampleid}/{sampleid}.sra",
     run:
         commands = [
-        "prefetch {wildcards.sampleid} -output-directory ../data/{wildcards.sampleid}", 
+        "prefetch {wildcards.sampleid}", 
         "fasterq-dump {wildcards.sampleid} --outdir ../data/{wildcards.sampleid} --progress"
         ]
 
         for c in commands:
             shell(c)
-"""
 
 rule merge_reads:
     threads: 20
