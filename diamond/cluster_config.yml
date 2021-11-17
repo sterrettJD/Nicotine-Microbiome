@@ -1,5 +1,5 @@
 __default__:
-    account: ACCOUNT
+    account: jost9358
     partition: short
     job-name: pear_diamond_nico_snake
     mail-type: ALL
