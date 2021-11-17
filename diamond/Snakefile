@@ -79,7 +79,7 @@ rule run_diamond:
         "../data/{sampleid}/diamond_results_{sampleid}.txt"
     shell:
         """
-        diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd \
+        diamond blastx --db ../database-building/uniprot-nicotine-db-fiji.dmnd \
         -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
         --threads 20 > ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt
         """ 
