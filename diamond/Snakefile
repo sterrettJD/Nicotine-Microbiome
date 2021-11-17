@@ -48,12 +48,9 @@ rule all: #for fiji
 
 rule get_data:
     output:
-        expand("../data/{sampleid}/{sampleid}_1.fastq",
-        sampleid=acc_ids),
-        expand("../data/{sampleid}/{sampleid}_2.fastq",
-        sampleid=acc_ids),
-        expand("../data/{sampleid}/{sampleid}/{sampleid}.sra",
-        sampleid=acc_ids)
+        "../data/{sampleid}/{sampleid}_1.fastq",
+        "../data/{sampleid}/{sampleid}_2.fastq",
+        "../data/{sampleid}/{sampleid}/{sampleid}.sra",
     run:
         commands = [
         "prefetch {wildcards.sampleid} -output-directory ../data/{wildcards.sampleid}", 
@@ -67,19 +64,13 @@ rule get_data:
 rule merge_reads:
     threads: 20
     input:
-        expand("../data/{sampleid}/{sampleid}_1.fastq",
-        sampleid=acc_ids),
-        expand("../data/{sampleid}/{sampleid}_2.fastq",
-        sampleid=acc_ids)
+        "../data/{sampleid}/{sampleid}_1.fastq",
+        "../data/{sampleid}/{sampleid}_2.fastq"
     output:
-        expand("../data/{sampleid}/{sampleid}.assembled.fastq",
-        sampleid=acc_ids),
-        expand("../data/{sampleid}/{sampleid}.discarded.fastq",
-        sampleid=acc_ids),
-        expand("../data/{sampleid}/{sampleid}.unassembled.forward.fastq",
-        sampleid=acc_ids),
-        expand("../data/{sampleid}/{sampleid}.unassembled.reverse.fastq", 
-        sampleid=acc_ids)
+        "../data/{sampleid}/{sampleid}.assembled.fastq",
+        "../data/{sampleid}/{sampleid}.discarded.fastq",
+        "../data/{sampleid}/{sampleid}.unassembled.forward.fastq",
+        "../data/{sampleid}/{sampleid}.unassembled.reverse.fastq"
     shell:
         """ 
         pear -f ../data/{wildcards.sampleid}/{wildcards.sampleid}_1.fastq \
@@ -91,11 +82,9 @@ rule merge_reads:
 rule run_diamond:
     threads: 20
     input:
-        expand("../data/{sampleid}/{sampleid}.assembled.fastq",
-        sampleid=acc_ids)
+        "../data/{sampleid}/{sampleid}.assembled.fastq"
     output:
-        expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
-        sampleid=acc_ids)
+        "../data/{sampleid}/diamond_results_{sampleid}.txt"
     shell:
         """
         diamond blastx --db ../database-building/uniprot-nicotine-db.dmnd \
