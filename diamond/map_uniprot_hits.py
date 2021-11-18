@@ -88,6 +88,6 @@ def main():
     df = add_to_diamond(responses, diamond_df, 
                         export_filepath=output_file)
     
-    print(df)
+    # print(df)
 if __name__=="__main__":
     main()
