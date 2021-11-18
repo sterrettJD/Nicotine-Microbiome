@@ -83,3 +83,15 @@ rule run_diamond:
         -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
         --threads 20 > ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt
         """ 
+
+rule map_uniprot:
+    input:
+        "../data/{sampleid}/diamond_results_{sampleid}.txt"
+    output:
+        "../data/{sampleid}/diamond_results_{sampleid}_mapped.txt"
+    shell:
+        """
+        python map_uniprot_hits.py \
+        -i ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt \
+        -o ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}_mapped.txt"
+        """
