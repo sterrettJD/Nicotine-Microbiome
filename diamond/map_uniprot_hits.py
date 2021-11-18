@@ -11,10 +11,17 @@ def get_args():
     parser.add_argument("-i", "--input_file",
                         type=str, action="store",
                         help="The filepath to your input file")
-                        
+
     parser.add_argument("-o", "--output_file",
                         type=str, action="store",
                         help="The filepath to your output file")
+
+    my_args = parser.parse_args()
+
+    input_file = my_args.input_file
+    output_file = my_args.output_file
+
+    return input_file, output_file
 
 
 def read_diamond_df(filepath):
