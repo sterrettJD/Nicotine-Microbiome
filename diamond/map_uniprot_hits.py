@@ -80,12 +80,13 @@ def add_to_diamond(responses, diamond_df, export_filepath=None, sep="\t"):
 
 
 def main():
-    diamond_df = read_diamond_df("organisms/Paenarthrobacter_diamond_results.txt")
+    input_file, output_file = get_args()
+    diamond_df = read_diamond_df(input_file)
     query_list = gene_acc_from_diamond_df(diamond_df)
     responses = get_gene_name(query_list)
     
     df = add_to_diamond(responses, diamond_df, 
-                        export_filepath="organisms/Paenarthrobacter_diamond_results_with_names.txt")
+                        export_filepath=output_file)
     
     print(df)
 if __name__=="__main__":
