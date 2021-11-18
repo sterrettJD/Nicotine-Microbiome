@@ -1,6 +1,20 @@
 import urllib.parse
 import urllib.request
 import pandas as pd
+import argparse 
+
+def get_args():
+    parser = argparse.ArgumentParser(
+        description="Getting input/output for mapping uniprot names")
+
+    # add my arguments
+    parser.add_argument("-i", "--input_file",
+                        type=str, action="store",
+                        help="The filepath to your input file")
+                        
+    parser.add_argument("-o", "--output_file",
+                        type=str, action="store",
+                        help="The filepath to your output file")
 
 
 def read_diamond_df(filepath):
