@@ -34,11 +34,11 @@ rule all: #for fiji
 
         # trim_short_reads creates these
         expand("../data/{sampleid}/{sampleid}.assembled.75.fastq",
-        sampleid=acc_ids)
+        sampleid=acc_ids),
 
         # diamond creates a results file
         expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
-        sampleid=acc_ids)
+        sampleid=acc_ids),
 
         # uniprot mapping creates this
         expand("../data/{sampleid}/diamond_results_{sampleid}_mapped.txt",
