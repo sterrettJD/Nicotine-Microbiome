@@ -1,6 +1,27 @@
 import urllib.parse
 import urllib.request
 import pandas as pd
+import argparse 
+
+def get_args():
+    parser = argparse.ArgumentParser(
+        description="Getting input/output for mapping uniprot names")
+
+    # add my arguments
+    parser.add_argument("-i", "--input_file",
+                        type=str, action="store",
+                        help="The filepath to your input file")
+
+    parser.add_argument("-o", "--output_file",
+                        type=str, action="store",
+                        help="The filepath to your output file")
+
+    my_args = parser.parse_args()
+
+    input_file = my_args.input_file
+    output_file = my_args.output_file
+
+    return input_file, output_file
 
 
 def read_diamond_df(filepath):
@@ -59,13 +80,14 @@ def add_to_diamond(responses, diamond_df, export_filepath=None, sep="\t"):
 
 
 def main():
-    diamond_df = read_diamond_df("organisms/Paenarthrobacter_diamond_results.txt")
+    input_file, output_file = get_args()
+    diamond_df = read_diamond_df(input_file)
     query_list = gene_acc_from_diamond_df(diamond_df)
     responses = get_gene_name(query_list)
     
     df = add_to_diamond(responses, diamond_df, 
-                        export_filepath="organisms/Paenarthrobacter_diamond_results_with_names.txt")
+                        export_filepath=output_file)
     
-    print(df)
+    # print(df)
 if __name__=="__main__":
     main()
