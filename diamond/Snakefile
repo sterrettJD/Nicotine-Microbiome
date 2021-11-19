@@ -32,6 +32,10 @@ rule all: #for fiji
         expand("../data/{sampleid}/{sampleid}.unassembled.reverse.fastq",
         sampleid=acc_ids),
 
+        # trim_short_reads creates these
+        expand("../data/{sampleid}/{sampleid}.assembled.75.fastq",
+        sampleid=acc_ids)
+
         # diamond creates a results file
         expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
         sampleid=acc_ids)
@@ -56,7 +60,7 @@ rule get_data:
         for c in commands:
             shell(c)
 """
-
+# merge reads using PEAR
 rule merge_reads:
     threads: 20
     input:
@@ -75,10 +79,25 @@ rule merge_reads:
         --threads 20
         """
 
+# trim merged reads using custom script
+rule trim_short_reads:
+    input:
+        "../data/{sampleid}/{sampleid}.assembled.fastq"
+    output:
+        "../data/{sampleid}/{sampleid}.assembled.75.fastq"
+    shell: # structure is [input file] [ouput file] [minimum read length]
+    """
+    bash trim_short_reads.sh \
+    ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
+    ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.75.fastq \
+    75
+    """
+
+# run diamond on trimmed merged reads
 rule run_diamond:
     threads: 20
     input:
-        "../data/{sampleid}/{sampleid}.assembled.fastq"
+        "../data/{sampleid}/{sampleid}.assembled.75.fastq"
     output:
         "../data/{sampleid}/diamond_results_{sampleid}.txt"
     shell:
@@ -88,6 +107,7 @@ rule run_diamond:
         --threads 20 > ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt
         """ 
 
+# map diamond hits to uniprot gene name
 rule map_uniprot:
     input:
         "../data/{sampleid}/diamond_results_{sampleid}.txt"
