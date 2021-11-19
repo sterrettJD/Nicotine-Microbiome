@@ -6,7 +6,7 @@
 #1. Start with inputs
 fq=$1
 out=$2
-minlen=$2
+minlen=$3
 
 #2. Find all entries with read length less than minimum length and print line numbers
 awk -v min=$minlen '{if(NR%4==2) if(length($0)<min) print NR"\n"NR-1"\n"NR+1"\n"NR+2}' $fq > temp.lines
