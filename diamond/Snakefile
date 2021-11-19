@@ -32,8 +32,12 @@ rule all: #for fiji
         expand("../data/{sampleid}/{sampleid}.unassembled.reverse.fastq",
         sampleid=acc_ids),
 
-        #diamond creates a results file
+        # diamond creates a results file
         expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
+        sampleid=acc_ids)
+
+        # uniprot mapping creates this
+        expand("../data/{sampleid}/diamond_results_{sampleid}_mapped.txt",
         sampleid=acc_ids)
 
 
