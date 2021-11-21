@@ -117,5 +117,5 @@ rule map_uniprot:
         """
         python map_uniprot_hits.py \
         -i ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt \
-        -o ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}_mapped.txt"
+        -o ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}_mapped.txt
         """
