@@ -46,7 +46,7 @@ def gene_acc_from_diamond_df(diamond_df):
     target_acc = diamond_df["Target accession"]
     target_acc = target_acc.apply(lambda x: x.split("|")[1])
     target_acc = target_acc.tolist()
-    return urllib.parse.quote(target_acc)
+    return target_acc
 
 def get_gene_name(query_list):
     url = 'https://www.uniprot.org/uploadlists/'
@@ -58,10 +58,9 @@ def get_gene_name(query_list):
     'query': " ".join(query_list)
     }
 
-    data = urllib.parse.urlencode(params)
-    data = data.encode('utf-8')
-    req = urllib.request.Request(url, data)
-    with urllib.request.urlopen(req) as f:
+    data = urllib.parse.urlencode(params).encode("utf-8")
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req, data=data) as f:
         response = f.read()
     return response.decode('utf-8')
 
