@@ -10,4 +10,3 @@ __default__:
     mem: 260gb
     output: /Users/jost9358/Nicotine-Microbiome/run_diamond_out/%j.out
     error: /Users/jost9358/Nicotine-Microbiome/run_diamond_out/%j.err
-
