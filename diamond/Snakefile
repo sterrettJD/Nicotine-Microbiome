@@ -119,3 +119,15 @@ rule map_uniprot:
         -i ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt \
         -o ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}_mapped.txt
         """
+
+# concatenate all diamond outputs to one file
+rule concat_diamond_mapped_outputs:
+    input:
+        expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
+        sampleid=acc_ids)
+    output:
+        "../gene_hits.tsv"
+    shell:
+        """
+        cat ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}_mapped.txt >> ../gene_hits.tsv
+        """
