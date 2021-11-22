@@ -44,6 +44,9 @@ rule all: #for fiji
         expand("../data/{sampleid}/diamond_results_{sampleid}_mapped.txt",
         sampleid=acc_ids)
 
+        # concat creates this
+        "../gene_hits.tsv"
+
 
 """
 rule get_data:
