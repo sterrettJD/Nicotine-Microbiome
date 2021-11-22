@@ -125,7 +125,7 @@ rule map_uniprot:
 # concatenate all diamond outputs to one file
 rule concat_diamond_mapped_outputs:
     input:
-        expand("../data/{sampleid}/diamond_results_{sampleid}.txt",
+        expand("../data/{sampleid}/diamond_results_{sampleid}_mapped.txt",
         sampleid=acc_ids)
     output:
         "../gene_hits.tsv"
