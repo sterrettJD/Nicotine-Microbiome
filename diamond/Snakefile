@@ -42,11 +42,10 @@ rule all: #for fiji
 
         # uniprot mapping creates this
         expand("../data/{sampleid}/diamond_results_{sampleid}_mapped.txt",
-        sampleid=acc_ids)
+        sampleid=acc_ids),
 
         # concat creates this
         "../gene_hits.tsv"
-
 
 """
 rule get_data:
@@ -132,5 +131,5 @@ rule concat_diamond_mapped_outputs:
         "../gene_hits.tsv"
     shell:
         """
-        cat ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}_mapped.txt >> ../gene_hits.tsv
+        cat {input} >> ../gene_hits.tsv
         """
