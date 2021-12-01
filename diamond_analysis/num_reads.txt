@@ -1,0 +1,532 @@
+../data/SRR9641788 \t 
+../data/SRR9641789 \t 
+../data/SRR9641790 \t 
+../data/SRR9641791 \t 
+../data/SRR9641792 \t 
+../data/SRR9641793 \t 
+../data/SRR9641794 \t 
+../data/SRR9641795 \t 
+../data/SRR9641796 \t 
+../data/SRR9641797 \t 
+../data/SRR9641798 \t 
+../data/SRR9641799 \t 
+../data/SRR9641800 \t 
+../data/SRR9641801 \t 
+../data/SRR9641802 \t 
+../data/SRR9641803 \t 
+../data/SRR9641804 \t 
+../data/SRR9641805 \t 
+../data/SRR9641806 \t 
+../data/SRR9641807 \t 
+../data/SRR9641808 \t 
+../data/SRR9641809 \t 
+../data/SRR9641810 \t 
+../data/SRR9641811 \t 
+../data/SRR9641812 \t 
+../data/SRR9641933 \t 
+../data/SRR9641934 \t 
+../data/SRR9641935 \t 
+../data/SRR9641936 \t 
+../data/SRR9641937 \t 
+../data/SRR9641938 \t 
+../data/SRR9641939 \t 
+../data/SRR9641940 \t 
+../data/SRR9641941 \t 
+../data/SRR9641942 \t 
+../data/SRR9641943 \t 
+../data/SRR9641944 \t 
+../data/SRR9641945 \t 
+../data/SRR9641946 \t 
+../data/SRR9641947 \t 
+../data/SRR9641948 \t 
+../data/SRR9641949 \t 
+../data/SRR9641950 \t 
+../data/SRR9641951 \t 
+../data/SRR9641952 \t 
+../data/SRR9641953 \t 
+../data/SRR9641954 \t 
+../data/SRR9641955 \t 
+../data/SRR9641956 \t 
+../data/SRR9668678 \t 
+../data/SRR9668679 \t 
+../data/SRR9668680 \t 
+../data/SRR9668681 \t 
+../data/SRR9668682 \t 
+../data/SRR9668683 \t 
+../data/SRR9668684 \t 
+../data/SRR9668685 \t 
+../data/SRR9668686 \t 
+../data/SRR9668687 \t 
+../data/SRR9668688 \t 
+../data/SRR9668689 \t 
+../data/SRR9668690 \t 
+../data/SRR9668691 \t 
+../data/SRR9668692 \t 
+../data/SRR9668693 \t 
+../data/SRR9668694 \t 
+../data/SRR9668695 \t 
+../data/SRR9668696 \t 
+../data/SRR9668697 \t 
+../data/SRR9668698 \t 
+../data/SRR9668699 \t 
+../data/SRR9668700 \t 
+../data/SRR9668701 \t 
+../data/SRR9668702 \t 
+../data/SRR9668703 \t 
+../data/SRR9668704 \t 
+../data/SRR9668705 \t 
+../data/SRR9668706 \t 
+../data/SRR9668707 \t 
+../data/SRR9668708 \t 
+../data/SRR9668709 \t 
+../data/SRR9668710 \t 
+../data/SRR9668711 \t 
+../data/SRR9668712 \t 
+../data/SRR9668713 \t 
+../data/SRR9668714 \t 
+../data/SRR9668715 \t 
+../data/SRR9668716 \t 
+../data/SRR9668717 \t 
+../data/SRR9668718 \t 
+../data/SRR9668719 \t 
+../data/SRR9668720 \t 
+../data/SRR9668721 \t 
+../data/SRR9668722 \t 
+../data/SRR9668723 \t 
+../data/SRR9668724 \t 
+../data/SRR9668725 \t 
+../data/SRR9668726 \t 
+../data/SRR9668727 \t 
+../data/SRR9668728 \t 
+../data/SRR9668729 \t 
+../data/SRR9668730 \t 
+../data/SRR9668731 \t 
+../data/SRR9668732 \t 
+../data/SRR9668733 \t 
+../data/SRR9668734 \t 
+../data/SRR9668735 \t 
+../data/SRR9668736 \t 
+../data/SRR9668737 \t 
+../data/SRR9668738 \t 
+../data/SRR9668739 \t 
+../data/SRR9668740 \t 
+../data/SRR9668741 \t 
+../data/SRR9668742 \t 
+../data/SRR9668743 \t 
+../data/SRR9668744 \t 
+../data/SRR9668745 \t 
+../data/SRR9668746 \t 
+../data/SRR9668747 \t 
+../data/SRR9668748 \t 
+../data/SRR9668749 \t 
+../data/SRR9668750 \t 
+../data/SRR9641788 \t 
+../data/SRR9641789 \t 
+../data/SRR9641790 \t 
+../data/SRR9641791 \t 
+../data/SRR9641792 \t 
+../data/SRR9641793 \t 
+../data/SRR9641794 \t 
+../data/SRR9641795 \t 
+../data/SRR9641796 \t 
+../data/SRR9641797 \t 
+../data/SRR9641798 \t 
+../data/SRR9641799 \t 
+../data/SRR9641800 \t 
+../data/SRR9641801 \t 
+../data/SRR9641802 \t 
+../data/SRR9641803 \t 
+../data/SRR9641804 \t 
+../data/SRR9641805 \t 
+../data/SRR9641806 \t 
+../data/SRR9641807 \t 
+../data/SRR9641808 \t 
+../data/SRR9641809 \t 
+../data/SRR9641810 \t 
+../data/SRR9641811 \t 
+../data/SRR9641812 \t 
+../data/SRR9641933 \t 
+../data/SRR9641934 \t 
+../data/SRR9641935 \t 
+../data/SRR9641936 \t 
+../data/SRR9641937 \t 
+../data/SRR9641938 \t 
+../data/SRR9641939 \t 
+../data/SRR9641940 \t 
+../data/SRR9641941 \t 
+../data/SRR9641942 \t 
+../data/SRR9641943 \t 
+../data/SRR9641944 \t 
+../data/SRR9641945 \t 
+../data/SRR9641946 \t 
+../data/SRR9641947 \t 
+../data/SRR9641948 \t 
+../data/SRR9641949 \t 
+../data/SRR9641950 \t 
+../data/SRR9641951 \t 
+../data/SRR9641952 \t 
+../data/SRR9641953 \t 
+../data/SRR9641954 \t 
+../data/SRR9641955 \t 
+../data/SRR9641956 \t 
+../data/SRR9668678 \t 
+../data/SRR9668679 \t 
+../data/SRR9668680 \t 
+../data/SRR9668681 \t 
+../data/SRR9668682 \t 
+../data/SRR9668683 \t 
+../data/SRR9668684 \t 
+../data/SRR9668685 \t 
+../data/SRR9668686 \t 
+../data/SRR9668687 \t 
+../data/SRR9668688 \t 
+../data/SRR9668689 \t 
+../data/SRR9668690 \t 
+../data/SRR9668691 \t 
+../data/SRR9668692 \t 
+../data/SRR9668693 \t 
+../data/SRR9668694 \t 
+../data/SRR9668695 \t 
+../data/SRR9668696 \t 
+../data/SRR9668697 \t 
+../data/SRR9668698 \t 
+../data/SRR9668699 \t 
+../data/SRR9668700 \t 
+../data/SRR9668701 \t 
+../data/SRR9668702 \t 
+../data/SRR9668703 \t 
+../data/SRR9668704 \t 
+../data/SRR9668705 \t 
+../data/SRR9668706 \t 
+../data/SRR9668707 \t 
+../data/SRR9668708 \t 
+../data/SRR9668709 \t 
+../data/SRR9668710 \t 
+../data/SRR9668711 \t 
+../data/SRR9668712 \t 
+../data/SRR9668713 \t 
+../data/SRR9668714 \t 
+../data/SRR9668715 \t 
+../data/SRR9668716 \t 
+../data/SRR9668717 \t 
+../data/SRR9668718 \t 
+../data/SRR9668719 \t 
+../data/SRR9668720 \t 
+../data/SRR9668721 \t 
+../data/SRR9668722 \t 
+../data/SRR9668723 \t 
+../data/SRR9668724 \t 
+../data/SRR9668725 \t 
+../data/SRR9668726 \t 
+../data/SRR9668727 \t 
+../data/SRR9668728 \t 
+../data/SRR9668729 \t 
+../data/SRR9668730 \t 
+../data/SRR9668731 \t 
+../data/SRR9668732 \t 
+../data/SRR9668733 \t 
+../data/SRR9668734 \t 
+../data/SRR9668735 \t 
+../data/SRR9668736 \t 
+../data/SRR9668737 \t 
+../data/SRR9668738 \t 
+../data/SRR9668739 \t 
+../data/SRR9668740 \t 
+../data/SRR9668741 \t 
+../data/SRR9668742 \t 
+../data/SRR9668743 \t 
+../data/SRR9668744 \t 
+../data/SRR9668745 \t 
+../data/SRR9668746 \t 
+../data/SRR9668747 \t 
+../data/SRR9668748 \t 
+../data/SRR9668749 \t 
+../data/SRR9668750 \t 
+../data/SRR9641788 \t 
+../data/SRR9641789 \t 
+../data/SRR9641790 \t 
+../data/SRR9641791 \t 
+../data/SRR9641792 \t 
+../data/SRR9641793 \t 
+../data/SRR9641794 \t 
+../data/SRR9641795 \t 
+../data/SRR9641796 \t 
+../data/SRR9641797 \t 
+../data/SRR9641798 \t 
+../data/SRR9641799 \t 
+../data/SRR9641800 \t 
+../data/SRR9641801 \t 
+../data/SRR9641802 \t 
+../data/SRR9641803 \t 
+../data/SRR9641804 \t 
+../data/SRR9641805 \t 
+../data/SRR9641806 \t 
+../data/SRR9641807 \t 
+../data/SRR9641808 \t 
+../data/SRR9641809 \t 
+../data/SRR9641810 \t 
+../data/SRR9641811 \t 
+../data/SRR9641812 \t 
+../data/SRR9641933 \t 
+../data/SRR9641934 \t 
+../data/SRR9641935 \t 
+../data/SRR9641936 \t 
+../data/SRR9641937 \t 
+../data/SRR9641938 \t 
+../data/SRR9641939 \t 
+../data/SRR9641940 \t 
+../data/SRR9641941 \t 
+../data/SRR9641942 \t 
+../data/SRR9641943 \t 
+../data/SRR9641944 \t 
+../data/SRR9641945 \t 
+../data/SRR9641946 \t 
+../data/SRR9641947 \t 
+../data/SRR9641948 \t 
+../data/SRR9641949 \t 
+../data/SRR9641950 \t 
+../data/SRR9641951 \t 
+../data/SRR9641952 \t 
+../data/SRR9641953 \t 
+../data/SRR9641954 \t 
+../data/SRR9641955 \t 
+../data/SRR9641956 \t 
+../data/SRR9668678 \t 
+../data/SRR9668679 \t 
+../data/SRR9668680 \t 
+../data/SRR9668681 \t 
+../data/SRR9668682 \t 
+../data/SRR9668683 \t 
+../data/SRR9668684 \t 
+../data/SRR9668685 \t 
+../data/SRR9668686 \t 
+../data/SRR9668687 \t 
+../data/SRR9668688 \t 
+../data/SRR9668689 \t 
+../data/SRR9668690 \t 
+../data/SRR9668691 \t 
+../data/SRR9668692 \t 
+../data/SRR9668693 \t 
+../data/SRR9668694 \t 
+../data/SRR9668695 \t 
+../data/SRR9668696 \t 
+../data/SRR9668697 \t 
+../data/SRR9668698 \t 
+../data/SRR9668699 \t 
+../data/SRR9668700 \t 
+../data/SRR9668701 \t 
+../data/SRR9668702 \t 
+../data/SRR9668703 \t 
+../data/SRR9668704 \t 
+../data/SRR9668705 \t 
+../data/SRR9668706 \t 
+../data/SRR9668707 \t 
+../data/SRR9668708 \t 
+../data/SRR9668709 \t 
+../data/SRR9668710 \t 
+../data/SRR9668711 \t 
+../data/SRR9668712 \t 
+../data/SRR9668713 \t 
+../data/SRR9668714 \t 
+../data/SRR9668715 \t 
+../data/SRR9668716 \t 
+../data/SRR9668717 \t 
+../data/SRR9668718 \t 
+../data/SRR9668719 \t 
+../data/SRR9668720 \t 
+../data/SRR9668721 \t 
+../data/SRR9668722 \t 
+../data/SRR9668723 \t 
+../data/SRR9668724 \t 
+../data/SRR9668725 \t 
+../data/SRR9668726 \t 
+../data/SRR9668727 \t 
+../data/SRR9668728 \t 
+../data/SRR9668729 \t 
+../data/SRR9668730 \t 
+../data/SRR9668731 \t 
+../data/SRR9668732 \t 
+../data/SRR9668733 \t 
+../data/SRR9668734 \t 
+../data/SRR9668735 \t 
+../data/SRR9668736 \t 
+../data/SRR9668737 \t 
+../data/SRR9668738 \t 
+../data/SRR9668739 \t 
+../data/SRR9668740 \t 
+../data/SRR9668741 \t 
+../data/SRR9668742 \t 
+../data/SRR9668743 \t 
+../data/SRR9668744 \t 
+../data/SRR9668745 \t 
+../data/SRR9668746 \t 
+../data/SRR9668747 \t 
+../data/SRR9668748 \t 
+../data/SRR9668749 \t 
+../data/SRR9668750 \t 
+../data/SRR9641788 \t 
+../data/SRR9641789 \t 
+../data/SRR9641790 \t 
+../data/SRR9641791 \t 
+../data/SRR9641792 \t 
+../data/SRR9641793 \t 
+../data/SRR9641794 \t 
+../data/SRR9641795 \t 
+../data/SRR9641788 \t 
+../data/SRR9641789 \t 
+../data/SRR9641790 \t 
+../data/SRR9641791 \t 
+../data/SRR9641792 \t 
+../data/SRR9641793 \t 
+../data/SRR9641794 \t 
+../data/SRR9641795 \t 
+../data/SRR9641796 \t 
+../data/SRR9641797 \t 
+../data/SRR9641798 \t 
+../data/SRR9641799 \t 
+../data/SRR9641788 \t 
+../data/SRR9641789 \t 
+../data/SRR9641790 \t 
+../data/SRR9641791 \t 
+../data/SRR9641792 \t 
+../data/SRR9641793 \t 
+../data/SRR9641794 \t 
+../data/SRR9641795 \t 
+../data/SRR9641796 \t 
+../data/SRR9641797 \t 
+../data/SRR9641798 \t 
+../data/SRR9641799 \t 
+../data/SRR9641788 \t 
+../data/SRR9641789 \t 
+../data/SRR9641790 \t 
+../data/SRR9641791 \t 
+../data/SRR9641792 \t 
+../data/SRR9641793 \t 
+../data/SRR9641794 \t 
+../data/SRR9641795 \t 
+../data/SRR9641796 \t 
+../data/SRR9641797 \t 
+../data/SRR9641798 \t 
+../data/SRR9641799 \t 
+../data/SRR9641788 \t 474858
+../data/SRR9641789 \t 1572607
+../data/SRR9641790 \t 834464
+../data/SRR9641791 \t 765507
+../data/SRR9641792 \t 822410
+../data/SRR9641793 \t 1030925
+../data/SRR9641794 \t 1026512
+../data/SRR9641795 \t 974233
+../data/SRR9641796 \t 1088344
+../data/SRR9641797 \t 696801
+../data/SRR9641798 \t 702653
+../data/SRR9641799 \t 1007108
+../data/SRR9641800 \t 1040354
+../data/SRR9641801 \t 808165
+../data/SRR9641802 \t 785291
+../data/SRR9641803 \t 934322
+../data/SRR9641804 \t 1189674
+../data/SRR9641805 \t 644496
+../data/SRR9641806 \t 1282427
+../data/SRR9641807 \t 684122
+../data/SRR9641808 \t 620259
+../data/SRR9641809 \t 1002176
+../data/SRR9641810 \t 1578951
+../data/SRR9641811 \t 1136012
+../data/SRR9641812 \t 1401143
+../data/SRR9641933 \t 754205
+../data/SRR9641934 \t 1407597
+../data/SRR9641935 \t 1107920
+../data/SRR9641936 \t 1026275
+../data/SRR9641937 \t 801314
+../data/SRR9641938 \t 1365600
+../data/SRR9641939 \t 1387372
+../data/SRR9641940 \t 1086976
+../data/SRR9641941 \t 1953658
+../data/SRR9641942 \t 914782
+../data/SRR9641943 \t 369244
+../data/SRR9641944 \t 397432
+../data/SRR9641945 \t 1471431
+../data/SRR9641946 \t 488088
+../data/SRR9641947 \t 984869
+../data/SRR9641948 \t 225640
+../data/SRR9641949 \t 1061395
+../data/SRR9641950 \t 568318
+../data/SRR9641951 \t 1428105
+../data/SRR9641952 \t 1752215
+../data/SRR9641953 \t 853578
+../data/SRR9641954 \t 755485
+../data/SRR9641955 \t 1029403
+../data/SRR9641956 \t 1020122
+../data/SRR9668678 \t 2192612
+../data/SRR9668679 \t 1994260
+../data/SRR9668680 \t 2711625
+../data/SRR9668681 \t 2781861
+../data/SRR9668682 \t 1784853
+../data/SRR9668683 \t 2891385
+../data/SRR9668684 \t 1766193
+../data/SRR9668685 \t 1815203
+../data/SRR9668686 \t 2016304
+../data/SRR9668687 \t 1814285
+../data/SRR9668688 \t 1860044
+../data/SRR9668689 \t 1834019
+../data/SRR9668690 \t 1886892
+../data/SRR9668691 \t 1801917
+../data/SRR9668692 \t 2308598
+../data/SRR9668693 \t 1758911
+../data/SRR9668694 \t 2062913
+../data/SRR9668695 \t 2897606
+../data/SRR9668696 \t 2529558
+../data/SRR9668697 \t 1986419
+../data/SRR9668698 \t 2548135
+../data/SRR9668699 \t 2332739
+../data/SRR9668700 \t 2145289
+../data/SRR9668701 \t 2263534
+../data/SRR9668702 \t 2436485
+../data/SRR9668703 \t 1994071
+../data/SRR9668704 \t 1995308
+../data/SRR9668705 \t 1613557
+../data/SRR9668706 \t 2210229
+../data/SRR9668707 \t 2387378
+../data/SRR9668708 \t 1977866
+../data/SRR9668709 \t 2046147
+../data/SRR9668710 \t 2242888
+../data/SRR9668711 \t 2140624
+../data/SRR9668712 \t 2724357
+../data/SRR9668713 \t 2357359
+../data/SRR9668714 \t 2656350
+../data/SRR9668715 \t 4262753
+../data/SRR9668716 \t 2593286
+../data/SRR9668717 \t 1894366
+../data/SRR9668718 \t 1978761
+../data/SRR9668719 \t 2290406
+../data/SRR9668720 \t 1949673
+../data/SRR9668721 \t 2527197
+../data/SRR9668722 \t 1702215
+../data/SRR9668723 \t 2595490
+../data/SRR9668724 \t 2847827
+../data/SRR9668725 \t 2720076
+../data/SRR9668726 \t 3577347
+../data/SRR9668727 \t 3045643
+../data/SRR9668728 \t 3293524
+../data/SRR9668729 \t 2747042
+../data/SRR9668730 \t 2798718
+../data/SRR9668731 \t 2946335
+../data/SRR9668732 \t 1790180
+../data/SRR9668733 \t 1958353
+../data/SRR9668734 \t 3108481
+../data/SRR9668735 \t 2656453
+../data/SRR9668736 \t 2122670
+../data/SRR9668737 \t 2594112
+../data/SRR9668738 \t 2372636
+../data/SRR9668739 \t 1844106
+../data/SRR9668740 \t 2003190
+../data/SRR9668741 \t 1816284
+../data/SRR9668742 \t 2021522
+../data/SRR9668743 \t 2086611
+../data/SRR9668744 \t 1970168
+../data/SRR9668745 \t 2632784
+../data/SRR9668746 \t 1645327
+../data/SRR9668747 \t 2722344
+../data/SRR9668748 \t 2690467
+../data/SRR9668749 \t 2520218
+../data/SRR9668750 \t 2568589
