@@ -85,12 +85,11 @@ rule trim_short_reads:
         "../data/{sampleid}/{sampleid}.assembled.fastq"
     output:
         "../data/{sampleid}/{sampleid}.assembled.75.fastq"
-    shell: # structure is [input file] [ouput file] [minimum read length]
+    shell: 
         """
-        bash trim_short_reads.sh \
-        ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
-        ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.75.fastq \
-        75
+        cutadapt --minimum-length 75 \
+        -o ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.75.fastq \
+        ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq 
         """
 
 # run diamond on trimmed merged reads
