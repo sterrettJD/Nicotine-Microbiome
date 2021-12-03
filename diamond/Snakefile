@@ -105,7 +105,7 @@ rule run_diamond:
     shell:
         """
         diamond blastx --db ../database-building/uniprot-nicotine-db-fiji.dmnd \
-        -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.fastq \
+        -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.75.fastq \
         --threads 20 > ../data/{wildcards.sampleid}/diamond_results_{wildcards.sampleid}.txt
         """ 
 
@@ -133,3 +133,17 @@ rule concat_diamond_mapped_outputs:
         """
         cat {input} >> ../gene_hits.tsv
         """
+
+# run diamond on trimmed merged reads
+#rule run_diamond:
+#    threads: 20
+#    input:
+#        "../data/{sampleid}/{sampleid}.assembled.75.fastq"
+#    output:
+#        "../data/{sampleid}/marker_diamond_results_{sampleid}.txt"
+#    shell:
+#        """
+#        diamond blastx --db ../database-building/marker-gene-db-fiji.dmnd \
+#        -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.75.fastq \
+#        --threads 20 > ../data/{wildcards.sampleid}/marker_diamond_results_{wildcards.sampleid}.txt
+#        """
