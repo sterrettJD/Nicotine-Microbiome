@@ -1,4 +1,5 @@
-# run with snakemake --cluster "sbatch" --cluster-config cluster_config.yml -j 20
+# run with 
+# snakemake --cluster "sbatch" --cluster-config cluster_config.yml -j 20 --latency-wait 30
 
 project_ids = ["PRJNA548383", "PRJNA544061", "PRJNA508385"]
 acc_ids = []
