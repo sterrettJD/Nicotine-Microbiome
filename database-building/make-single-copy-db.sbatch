@@ -7,8 +7,8 @@
 #SBATCH --ntasks=1 # Run on a single CPU
 #SBATCH --mem=10gb # Memory limit
 #SBATCH --time=01:00:00 # Time limit hrs:min:sec
-#SBATCH --output=/Users/jost9358/Nicotine-Microbiome/make_single_copy_db/_%j.out # Standard output and error log
-#SBATCH --error=/Users/jost9358/Nicotine-Microbiome/make_single_copy_db/_%j.err # %j inserts job number
+#SBATCH --output=/Users/jost9358/Nicotine-Microbiome/make_single_copy_db_%j.out # Standard output and error log
+#SBATCH --error=/Users/jost9358/Nicotine-Microbiome/make_single_copy_db_%j.err # %j inserts job number
 
 # download the db
 wget https://data.gtdb.ecogenomic.org/releases/release202/202.0/genomic_files_reps/bac120_marker_genes_reps_r202.tar.gz --no-check-certificate
