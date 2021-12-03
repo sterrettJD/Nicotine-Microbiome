@@ -20,4 +20,4 @@ tar -xf bac120_marker_genes_reps_r202.tar.gz
 cat bac120_marker_genes_reps_r202/faa/* > bac120_marker_genes_reps_r202/bac120_marker_genes_reps_r202.faa
 
 # make the db
-diamond makedb -in bac120_marker_genes_reps_r202/bac120_marker_genes_reps_r202.faa -o marker_gene_db.dmnd
+diamond makedb --in bac120_marker_genes_reps_r202/bac120_marker_genes_reps_r202.faa --db marker_gene_db.dmnd
