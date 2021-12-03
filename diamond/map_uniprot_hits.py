@@ -55,7 +55,7 @@ def get_gene_name(query_list):
     'from': 'ACC+ID',
     'to': 'GENENAME',
     'format': 'tab',
-    'query': " ".join(query_list)
+    'query': urllib.quote(" ".join(query_list))
     }
 
     data = urllib.parse.urlencode(params).encode("utf-8")
