@@ -44,7 +44,14 @@ rule all: #for fiji
         sampleid=acc_ids),
 
         # concat creates this
-        "../gene_hits.tsv"
+        "../gene_hits.tsv",
+
+        # diamond_single_copy_marker_genes creates these
+        expand("../data/{sampleid}/marker_diamond_results_{sampleid}.txt",
+        sampleid=acc_ids),
+
+        # concat_single_copy_hits creates this
+        "marker_gene_hits.tsv"
 
 """
 rule get_data:
@@ -133,7 +140,7 @@ rule concat_diamond_mapped_outputs:
         """
 
 # run diamond on trimmed merged reads
-#rule run_diamond:
+#rule run_diamond_single_copy_marker_genes:
 #    threads: 20
 #    input:
 #        "../data/{sampleid}/{sampleid}.assembled.75.fastq"
@@ -141,7 +148,19 @@ rule concat_diamond_mapped_outputs:
 #        "../data/{sampleid}/marker_diamond_results_{sampleid}.txt"
 #    shell:
 #        """
-#        diamond blastx --db ../database-building/marker-gene-db-fiji.dmnd \
+#        diamond blastx --db ../database-building/marker_gene_db.dmnd \
 #        -q ../data/{wildcards.sampleid}/{wildcards.sampleid}.assembled.75.fastq \
 #        --threads 20 > ../data/{wildcards.sampleid}/marker_diamond_results_{wildcards.sampleid}.txt
+#        """
+
+# concatenate all diamond outputs to one file
+#rule concat_single_copy_hits:
+#    input:
+#        expand("../data/{sampleid}/marker_diamond_results_{sampleid}_mapped.txt",
+#        sampleid=acc_ids)
+#    output:
+#        "../gene_hits.tsv"
+#    shell:
+#        """
+#        cat {input} >> ../marker_gene_hits.tsv
 #        """
