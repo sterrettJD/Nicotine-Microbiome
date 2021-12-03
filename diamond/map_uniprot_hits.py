@@ -46,7 +46,7 @@ def gene_acc_from_diamond_df(diamond_df):
     target_acc = diamond_df["Target accession"]
     target_acc = target_acc.apply(lambda x: x.split("|")[1])
     target_acc = target_acc.tolist()
-    target_acc = [urllib.quote(x) for x in target_acc]
+    target_acc = [urllib.parse.quote(x) for x in target_acc]
     return target_acc
 
 def get_gene_name(query_list):
