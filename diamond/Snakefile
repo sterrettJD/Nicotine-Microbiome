@@ -47,11 +47,11 @@ rule all: #for fiji
         "../gene_hits.tsv",
 
         # diamond_single_copy_marker_genes creates these
-        expand("../data/{sampleid}/marker_diamond_results_{sampleid}.txt",
-        sampleid=acc_ids),
+        #expand("../data/{sampleid}/marker_diamond_results_{sampleid}.txt",
+        #sampleid=acc_ids),
 
         # concat_single_copy_hits creates this
-        "marker_gene_hits.tsv"
+        #"marker_gene_hits.tsv"
 
 """
 rule get_data:
