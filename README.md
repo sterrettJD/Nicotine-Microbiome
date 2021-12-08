@@ -1,9 +1,26 @@
 # Nicotine-Microbiome
-IQ Biology Rotation Project with Noah Fierer
+IQ Biology Rotation Project 
+
+## Abstract
+**Nicotine Metabolism Genes in the Oral Microbiomes of Nicotine Users and Non-Users**
+
+John Sterrett1,2, Noah Fierer3,4
+1. Department of Integrative Physiology, University of Colorado, Boulder, CO
+2. Interdisciplinary Quantitative Biology, University of Colorado, Boulder, CO
+3. Department of Ecology and Evolutionary Biology, University of Colorado, Boulder, CO
+4. Cooperative Institute for Research in Environmental Sciences, Boulder, CO
+
+Individuals who smoke cigarettes or use e-cigarettes inhale nicotine (among other compounds) frequently throughout the day, and such drug use increases risks of cancer, lung disease, and cardiovascular disease. Many studies have investigated the metabolism of nicotine within human cells and tissues, which occurs at a rate that is largely genetically determined, with this rate affecting the likelihood of successful smoking cessation. What has not been investigated is whether those bacteria living in the oral cavity are also capable of nicotine metabolism. Given that bacteria capable of nicotine metabolism have been found in other environments and given the well-characterized impacts of nicotine use on the taxonomic structure of oral microbiomes, it is possible that frequent nicotine use could select for nicotine-metabolizing bacteria in the oral microbiome. However, no research has specifically investigated whether genes for nicotine degradation are even present in the oral microbiome and, if so, whether the oral microbiomes of smokers and e-cigarette users have higher relative abundances of genes involved in nicotine catabolism. 
+
+To address this knowledge gap, I compiled a database of sequences for all known bacterial genes involved in nicotine degradation. I then analyzed a publicly available oral microbiome shotgun metagenomic dataset from a study of smokers, e-cigarette users, and non-users. The raw reads were quality filtered and merged, and bacterial nicotine degradation genes were identified. Nicotine gene counts were then normalized based on the number of single-copy bacterial marker genes per metagenome. I was able to detect genes encoding 16 of the 27 enzymes in the pyridine and pyrrolidine pathways for nicotine degradation, demonstrating that genes for nicotine degradation are indeed present in the oral microbiome. However, there were no significant increases in the relative abundances of nicotine degradation genes in smokers or e-cigarette users compared to non-users. The dataset, though, was limited by large variation in sequencing depth, and our analysis was constrained to relative abundances of such genes. The detection of nicotine degradation genes supports the application of our pipeline to other existing metagenomic datasets or the development of qPCR assays to quantify absolute abundances of these genes. Furthermore, the constructed database and pipeline could be used with reference genome databases to more identify which bacterial taxa, beyond those already described, are likely capable of nicotine catabolism. This work was supported in part by the Interdisciplinary Quantitative Biology (IQ Biology) program at the BioFrontiers Institute, University of Colorado, Boulder.
 
 ## Goal
 
 - Assess number of nicotine-degrading genes in the oral microbiomes of smokers/vapers vs non-smokers/vapers
+
+## Main files of interest
+- diamond/ contains the Snakefile for the Snakemake pipeline
+- diamond_analysis/ contains the Jupyter notebook used to analyze the Diamond output
 
 ## Methods
 
@@ -20,9 +37,11 @@ IQ Biology Rotation Project with Noah Fierer
     - UniProt [API querying](https://www.uniprot.org/help/api_queries)
   - Then add others once things are working
   - Check for these genes in their hosts in [IMG](https://img.jgi.doe.gov/) as a sanity check
-- Use Diamond to find nicotine-degrading genes in the oral microbiolmes
+- Merge reads using PEAR
+- Filter short reads using 
+- Use Diamond to find nicotine-degrading genes in the oral microbiomes
 - Assess difference in nicotine-degrading genes in the oral microbiomes of smokes/vapers vs controls
-- Look at MAGs if time?
+- Normalize based on total reads and bacterial single-copy marker genes (DIAMOND as well) from [here](https://data.gtdb.ecogenomic.org/releases/release202/202.0/genomic_files_reps/bac120_marker_genes_reps_r202.tar.gz)
 
 ## Database
 
