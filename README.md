@@ -4,7 +4,7 @@ IQ Biology Rotation Project
 ## Abstract
 **Nicotine Metabolism Genes in the Oral Microbiomes of Nicotine Users and Non-Users**
 
-John Sterrett1,2, Noah Fierer3,4
+John Sterrett 1,2, Noah Fierer 3,4
 1. Department of Integrative Physiology, University of Colorado, Boulder, CO
 2. Interdisciplinary Quantitative Biology, University of Colorado, Boulder, CO
 3. Department of Ecology and Evolutionary Biology, University of Colorado, Boulder, CO
@@ -21,6 +21,7 @@ To address this knowledge gap, I compiled a database of sequences for all known 
 ## Main files of interest
 - diamond/ contains the Snakefile for the Snakemake pipeline
 - diamond_analysis/ contains the Jupyter notebook used to analyze the Diamond output
+- database-building/ contains diamond formatted databases for nicotine-degrading genes as well as the raw .fasta files for the database (used uniprot-fastas/uniprot-nicotine.fasta for the fasta)
 
 ## Methods
 
