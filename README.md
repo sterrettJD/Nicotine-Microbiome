@@ -16,10 +16,10 @@ To address this knowledge gap, I compiled a database of sequences for all known 
 
 ## Goal
 
-- Assess number of nicotine-degrading genes in the oral microbiomes of smokers/vapers vs non-smokers/vapers
+- Assess nicotine-degrading genes in the oral metagenomes of smokers/vapers vs non-smokers/vapers
 
 ## Main files of interest
-- diamond/ contains the Snakefile for the Snakemake pipeline
+- diamond/ contains the Snakefile for the Snakemake pipeline (includes getting data, merging reads, filtering, DIAMOND, mapping results)
 - diamond_analysis/ contains the Jupyter notebook used to analyze the Diamond output
 - database-building/ contains diamond formatted databases for nicotine-degrading genes as well as the raw .fasta files for the database (used uniprot-fastas/uniprot-nicotine.fasta for the fasta)
 
@@ -29,20 +29,17 @@ To address this knowledge gap, I compiled a database of sequences for all known 
   - Project IDs: PRJNA548383, PRJNA544061, and PRJNA508385
 - Create database of sequences for genes involved in nicotine degradation, based on [Mu et al., 2020](https://www.sciencedirect.com/science/article/pii/S001393512030150X)
   - MetaCyc degradation pathways tsvs added
-  - Pull fastas from GenBank
-    - `conda install -y -c conda-forge -c bioconda -c defaults entrez-direct`
-    - `esearch -db protein -query 'Protein name' | efetch -format fasta`
-    - But some of the genes only have names, not accession IDs, so they return sequences for unwanted genes...
-  - Start with a few key genes to get the pipeline running
-  - Pull from [UniProt](https://www.uniprot.org/) and/or [GenBank](https://www.ncbi.nlm.nih.gov/guide/howto/find-transcript-gene/)
-    - UniProt [API querying](https://www.uniprot.org/help/api_queries)
-  - Then add others once things are working
+  - Pull all bacterial sequences for each E.C. number from MetaCyc tsv from [UniProt](https://www.uniprot.org/) 
   - Check for these genes in their hosts in [IMG](https://img.jgi.doe.gov/) as a sanity check
+  - Check for these genes in some negative controls (E Coli)
 - Merge reads using PEAR
-- Filter short reads using 
-- Use Diamond to find nicotine-degrading genes in the oral microbiomes
+- Filter short reads using cutadapt
+- Use Diamond to find nicotine-degrading genes in the dataset
+- Use Diamond to find single-copy bacterial marker genes in dataset
+  - [database](https://data.gtdb.ecogenomic.org/releases/release202/202.0/genomic_files_reps/bac120_marker_genes_reps_r202.tar.gz)
+- Normalize nicotine gene hits by single copy marker genes
 - Assess difference in nicotine-degrading genes in the oral microbiomes of smokes/vapers vs controls
-- Normalize based on total reads and bacterial single-copy marker genes (DIAMOND as well) from [here](https://data.gtdb.ecogenomic.org/releases/release202/202.0/genomic_files_reps/bac120_marker_genes_reps_r202.tar.gz)
+
 
 ## Database
 
@@ -56,13 +53,10 @@ To address this knowledge gap, I compiled a database of sequences for all known 
 
 ## Diamond
 - Please cite http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
-- tested diamond with `diamond blastx -q PRJNA548383/SRR9641933/SRR9641933_1.fastq -d database-building/uniprot-nicotine-db.dmnd -o test.tsv `
-  - Got a couple hundred hits
 
 ## Files/details
 
-1. `setup_scripts` contains scripts with code to install sra toolkit. I haven't tried these in script format (since I only needed to install it once), 
-but I imagine I will need this code later if using fastq-dump on fiji.
+1. `setup_scripts` contains scripts with code to install sra toolkit. You don't have to run these as scripts (not sure if they work) - they're mostly a command history for setting up SRA toolkit in case I have to do it again and want an easy reference.
   - If having issues see the [documentation](https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit) 
 or [config guidelines](https://github.com/ncbi/sra-tools/wiki/03.-Quick-Toolkit-Configuration). 
   - Note for future John can try the following instead of `vdb-config -i`:
@@ -72,7 +66,4 @@ or [config guidelines](https://github.com/ncbi/sra-tools/wiki/03.-Quick-Toolkit-
     - `vdb-config --report-cloud-identity yes`
 
 2. `get_data.sh` is a script to loop through the SRA accession values for the projects and download the fastq files in directories named by their run IDs.
-  - If having issues with this, consider something similar to the following: 
-> while read line; do \
-> wget http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=dload&run_list=${line}&format=fastq; \
-> done<list_of_ids
+  - There's also commented out code in the Snakefile to do this, so either could be used.
